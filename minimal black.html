@@ -20,7 +20,7 @@
         header {
             text-align: center;
             padding: 100px 20px;
-            background: #000;
+            background: linear-gradient(135deg, #000, #222);
             position: relative;
         }
         
@@ -40,14 +40,14 @@
             animation: fadeIn 3s ease-in-out;
         }
         
-        .about-section, .skills-section, .timeline-section, .services-section, .achievements-section {
+        .section {
             max-width: 800px;
             margin: 50px auto;
             padding: 20px;
             animation: fadeIn 2s ease-in-out;
         }
         
-        .about-section h2, .skills-section h2, .timeline-section h2, .services-section h2, .achievements-section h2 {
+        .section h2 {
             font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 10px;
@@ -55,25 +55,26 @@
             text-align: center;
         }
         
-        .about-section p, .skills-section p, .timeline-section p, .services-section p, .achievements-section p {
+        .section p {
             font-size: 1.1em;
             color: #bbb;
             text-align: center;
         }
         
-        .skills-section ul, .timeline-section ul, .services-list, .achievements-list {
+        .skills-section ul, .timeline ul, .services ul, .achievements ul {
             list-style-type: none;
             padding: 0;
         }
         
-        .skills-section li, .timeline-section li, .services-list li, .achievements-list li {
+        .skills-section li, .timeline li, .services li, .achievements li {
             margin: 10px 0;
             font-size: 1.1em;
             color: #bbb;
             text-align: center;
+            animation: listItemFadeIn 2s ease-in-out;
         }
         
-        .skills-section li::before, .timeline-section li::before, .services-list li::before, .achievements-list li::before {
+        .skills-section li::before, .timeline li::before, .services li::before, .achievements li::before {
             content: '•';
             color: #00bfff;
             margin-right: 10px;
@@ -143,6 +144,7 @@
             border-radius: 6px;
             margin: 10px 0;
             width: 45%;
+            animation: fadeInUp 2s ease-in-out;
         }
 
         .timeline-item::after {
@@ -166,7 +168,7 @@
             left: 55%;
         }
 
-        .timeline-item:nth-child(even::after) {
+        .timeline-item:nth-child(even)::after {
             left: -13px;
         }
 
@@ -222,15 +224,6 @@
             to { transform: translateX(0); }
         }
 
-        .timeline-item {
-            animation: fadeInUp 2s ease-in-out;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
         .about-section p, .skills-section p, .services-section p, .achievements-section p {
             animation: textAppear 3s ease-in-out;
         }
@@ -238,15 +231,6 @@
         @keyframes textAppear {
             from { opacity: 0; }
             to { opacity: 1; }
-        }
-
-        .services-list li, .achievements-list li {
-            animation: listItemFadeIn 2s ease-in-out;
-        }
-
-        @keyframes listItemFadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .header-content {
@@ -301,13 +285,11 @@
             <p>Developer Specializing in PHP, Python, and Node.js</p>
         </div>
     </header>
-    <section id="about" class="about-section">
+    <section id="about" class="section about-section">
         <h2 class="hover-underline-animation">About Me</h2>
-        <p>My name is OM, and I am a versatile developer with expertise in PHP, Python, and Node.js. I have a strong passion for crafting innovative solutions and delving into new technologies. Constantly striving to push the boundaries of what is possible, I am dedicated to delivering cutting-edge developments and excellence in every project I undertake.
-
-</p>
+        <p>My name is OM, and I am a versatile developer with expertise in PHP, Python, and Node.js. I have a strong passion for crafting innovative solutions and delving into new technologies. Constantly striving to push the boundaries of what is possible, I am dedicated to delivering cutting-edge developments and excellence in every project I undertake.</p>
     </section>
-    <section id="skills" class="skills-section">
+    <section id="skills" class="section skills-section">
         <h2 class="hover-underline-animation">Skills</h2>
         <ul>
             <li>PHP Development</li>
@@ -319,7 +301,7 @@
             <li>Data Analysis</li>
         </ul>
     </section>
-    <section id="timeline" class="timeline-section">
+    <section id="timeline" class="section timeline-section">
         <h2 class="hover-underline-animation">Experience Timeline</h2>
         <ul class="timeline">
             <li class="timeline-item">
@@ -336,7 +318,7 @@
             </li>
         </ul>
     </section>
-    <section id="services" class="services-section">
+    <section id="services" class="section services-section">
         <h2 class="hover-underline-animation">Services</h2>
         <ul class="services-list">
             <li>Custom Web Development</li>
@@ -347,7 +329,7 @@
             <li>Machine Learning Solutions</li>
         </ul>
     </section>
-    <section id="achievements" class="achievements-section">
+    <section id="achievements" class="section achievements-section">
         <h2 class="hover-underline-animation">Achievements</h2>
         <ul class="achievements-list">
             <li>Developed a high-traffic e-commerce platform</li>
